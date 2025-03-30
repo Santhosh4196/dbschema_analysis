@@ -1,6 +1,21 @@
 #DB Schema validation module
 import pandas as pd
 
+'''
+SQL query to get list of tables from UAT:
+select CONCAT('''',TABLE_NAME,'''', ',') AS FormattedColumn from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='dbo' order by TABLE_NAME
+
+SQL query to get table details from dev and uat to be pasted in excel sheets.
+
+select TABLE_NAME,DATA_TYPE,COLUMN_NAME,COLUMN_DEFAULT,IS_NULLABLE,NUMERIC_PRECISION,NUMERIC_SCALE
+from INFORMATION_SCHEMA.COLUMNS where TABLE_SCHEMA='DBO'  
+and TABLE_NAME in 
+(
+--replace table list from above query
+)
+order by TABLE_NAME
+--new line
+'''
 
 
 # Load the Excel file
